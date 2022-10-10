@@ -3,51 +3,57 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define point pair<int, int>
-#define x first
-#define y second
+struct point {
+    int x, y;
 
-void operator -= (point & a, point b) {a.x -= b.x, a.y -= b.y;}
+    point(int _x = 0, int _y = 0) {
+        x = _x, y = _y;
+    }
 
-// counterClockWise
-bool ccw(point a, point b, point c) {
-    c -= b, b -= a;
+    bool operator < (const point& A) const {
+        return x < A.x || (x == A.x && y < A.y);
+    }
+};
 
-    return b.x * c.y > b.y * c.x;
+// (+) => counter clockwise | (-) => clockwise
+int crossProduct(point O, point A, point B) {
+    return (A.x - O.x) * (B.y - O.y) - (A.y - O.y) * (B.x - O.x);
+}
+
+vector<point> convexHull(vector<point> arr) {
+    int n = arr.size(), k = 0;
+
+    if (n <= 3) return arr;
+
+    sort(arr.begin(), arr.end());
+
+    vector<point> result(2 * n);
+
+    for (int i = 0, anchor = k + 2; i < n; i++) {
+        while (k >= anchor && crossProduct(result[k - 2], result[k - 1], arr[i]) <= 0) k--;
+
+        result[k++] = arr[i];
+    }
+
+    for (int i = n - 1, anchor = k + 1; i >= 0; i--) {
+        while (k >= anchor && crossProduct(result[k - 2], result[k - 1], arr[i]) <= 0) k--;
+
+        result[k++] = arr[i];
+    }
+
+    result.resize(k - 1);
+
+    return result;
 }
 
 int n; vector<point> arr;
 
 void Input() {
-    cin >> n; arr.assign(n + 1, {0, 0});
+    cin >> n; if (n == -1) exit(0);
 
-    for (int i = 1; i <= n; i++) cin >> arr[i].x >> arr[i].y;
-}
+    arr.assign(n, point(0, 0));
 
-void convexHull() {
-    int anchor = 2; vector<int> order;
-
-    for (int i = 1; i <= n; i++) {
-        while (order.size() >= anchor && ccw(arr[order[order.size() - 2]], arr[order.back()], arr[i])) order.pop_back();
-
-        order.push_back(i);
-    }
-
-    anchor += order.size();
-
-    for (int i = n; i >= 1; i--) {
-        while (order.size() >= anchor && ccw(arr[order[order.size() - 2]], arr[order.back()], arr[i])) order.pop_back();
-
-        order.push_back(i);
-    }
-
-    vector<bool> visited(n + 1, false); for (int x : order) visited[x] = true;
-
-    int cnt = 0;
-
-    for (int i = 1; i <= n; i++) if (visited[i]) arr[cnt++] = arr[i];
-
-    n = cnt - 1;
+    for (int i = 0; i < n; i++) cin >> arr[i].x >> arr[i].y;
 }
 
 int Area(point a, point b, point c) {
@@ -59,13 +65,9 @@ int Area(int a, int b, int c) {
 }
 
 void Process() {
-    sort(arr.begin() + 1, arr.end());
-
-    convexHull();
+    arr = convexHull(arr); n = arr.size();
 
     int result = 0;
-
-    for (int i = 0; i < n; i++) cout << arr[i].x << ' ' << arr[i].y << '\n';
 
     for (int i = 0, j = 1, k = 2; i < n; i++) {
         if (i == j) j = (j + 1) % n;
@@ -86,14 +88,11 @@ void Process() {
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-    freopen("Mtriarea.inp", "r", stdin);
-	freopen("Mtriarea.out", "w", stdout);
-
     while (true) {
         Input();
 
-        if (n == -1) return 0;
-
         Process();
     }
+
+    return 0;
 }

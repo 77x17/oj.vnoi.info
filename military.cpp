@@ -3,20 +3,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define point pair<int, int>
 #define x first
 #define y second
 
-void operator -= (point& a, point b) {a.x -= b.x, a.y -= b.y;}
+void operator -= (pair<int, int>& a, pair<int, int> b) {a.x -= b.x, a.y -= b.y;}
 
-// counterClockWise
-bool ccw(point a, point b, point c) {
+// counterClockWiordere
+bool ccw(pair<int, int> a, pair<int, int> b, pair<int, int> c) {
     c -= b, b -= a;
 
     return b.x * c.y > b.y * c.x;
 }
 
-int n; vector<point> arr;
+int n; vector<pair<int, int>> arr;
 
 void Input() {
     cin >> n; arr.assign(n + 1, {0, 0});
@@ -51,7 +50,7 @@ void convexHull() {
 }
 
 void Process() {
-    sort(arr.begin() + 1, arr.end(), comp);
+    sort(arr.begin() + 1, arr.end());
 
     int result = 0;
 
