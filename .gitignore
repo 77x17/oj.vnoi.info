@@ -1,2 +1,6 @@
 *.exe
 *.o
+*.inp
+*.out
+*_bf.cpp
+Compare.cpp
