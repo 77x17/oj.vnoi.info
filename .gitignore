@@ -3,4 +3,5 @@
 *.inp
 *.out
 *_bf.cpp
+*.cpp.save-failed
 Compare.cpp
