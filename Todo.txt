@@ -1,1 +1,18 @@
-✓	
+✓	bedao_m13_exam
+✓	c11post
+TLE	ctncln
+✓	dtksub
+✓	dttui1
+✓	dttui2
+TLE	fct002_acquire
+✓	hiway
+✓	hiway2
+✓	match2
+✓	military
+✓	mincost
+✓	mtriarea
+✓	paliny
+✓	power
+✓	substr
+✓	vmunch
+✓	vostr
