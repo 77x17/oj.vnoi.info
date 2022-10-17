@@ -7,6 +7,11 @@ TLE	ctncln
 TLE	fct002_acquire
 ✓	hiway
 ✓	hiway2
+✓	icpc22_mb_b
+✓	icpc22_mb_c
+✓	icpc22_mb_d
+✓	icpc22_mb_e
+✓	kvip
 ✓	match2
 ✓	military
 ✓	mincost
