@@ -1,4 +1,5 @@
-:---:|-------
+Status | Task
+---|---
 ✓	| acmnb  
 ✓	| bedao_m13_exam  
 ✓	| c11post  
