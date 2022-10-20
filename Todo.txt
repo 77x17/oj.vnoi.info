@@ -1,33 +1,35 @@
-✓	acmnb
-✓	bedao_m13_exam
-✓	c11post
-✓	c11str2
-TLE	ctncln
-✓	dhrect
-✓	dtksub
-✓	dttui1
-✓	dttui2
-TLE	fct002_acquire
-✓	graph_
-✓	hiway
-✓	hiway2
-✓	icpc22_mb_b
-✓	icpc22_mb_c
-✓	icpc22_mb_d
-✓	icpc22_mb_e
-✓	kvip
-✓	lem3
-✓	match2
-✓	military
-✓	mincost
-✓	mtriarea
-✓	nknumfre
-✓	nksp
-✓	nkteam
-✓	paliny
-✓	power
-✓	substr
-TLE	tconcert
-✓	ttrip
-✓	vmunch
-✓	vostr
+Status | Task | Link
+:---:|---|---
+✓	| acmnb | oj.vnoi.info/problem/acmnb
+✓	| bedao_m13_exam  
+✓	| c11post  
+✓	| c11str2  
+TLE	| ctncln  
+✓	| dhrect  
+✓	| dtksub  
+✓	| dttui1  
+✓	| dttui2  
+TLE	| fct002_acquire  
+✓	| graph_  
+✓	| hiway  
+✓	| hiway2  
+✓	| icpc22_mb_b  
+✓	| icpc22_mb_c  
+✓	| icpc22_mb_d  
+✓	| icpc22_mb_e  
+✓	| kvip  
+✓	| lem3  
+✓	| match2  
+✓	| military  
+✓	| mincost  
+✓	| mtriarea  
+✓	| nknumfre  
+✓	| nksp  
+✓	| nkteam  
+✓	| paliny  
+✓	| power  
+✓	| substr  
+TLE	| tconcert  
+✓	| ttrip  
+✓	| vmunch  
+✓	| vostr  
